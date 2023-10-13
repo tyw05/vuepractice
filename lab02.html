@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab02</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body></body>
+        <div id="app">
+              <table id="table" >
+            <thead>
+                <tr>
+                    
+                    <th><div class="sort-arrow" v-on:click="toggleSortOrder('ID')">
+                        ID 
+                        <div v-bind:class="{'arrow-up': sortOrder === 1 && sortProperty === 'ID', 'arrow-down': sortOrder === -1 && sortProperty === 'ID'}"></div>
+                    </div></th>
+
+                    <th><div class="sort-arrow" v-on:click="toggleSortOrder('name')">
+                        Full Name
+                        <div v-bind:class="{'arrow-up': sortOrder === 1 && sortProperty === 'name', 'arrow-down': sortOrder === -1 && sortProperty === 'name'}"></div>
+                    </div></th>
+
+                    <th>Phone</th>
+                </tr>
+            </thead>
+                <tbody >
+                    <tr v-for="items in rows">
+                        <td>{{items.id}}</td>
+                        <td>{{items.name}}</td>
+                        <td>{{items.phone}}</td>
+                    </tr>
+                </tbody>
+              </table>    
+              <ul>
+               <!-- <li v-for="row in ">{{row.id}},{{row.name}},{{row.phone}}</li> -->
+            </ul>          
+        </div>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
